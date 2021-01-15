@@ -85,7 +85,7 @@ Nuxt 에서는 pages 폴더 안에서 vue 파일을 구성함에 따라 자동�
 공식문서: [데이터와 메소드](https://kr.vuejs.org/v2/guide/instance.html#%EB%8D%B0%EC%9D%B4%ED%84%B0%EC%99%80-%EB%A9%94%EC%86%8C%EB%93%9C)
 
 제공되는 순서: <br>
-&nbsp;&nbsp;&nbsp;&nbsp; **페이지 접근 -> data (asyncData), methods || created() -> mounted() -> updated() -> destroyed()**
+&nbsp;&nbsp;&nbsp;&nbsp; 페이지 접근 > data (asyncData), methods || created() > mounted() > updated() > destroyed()
 <br>
 브라우저가 url 을 호출하면, 먼저 `<template>` 구성이 시작되고, 이때 template html 스크립트에 쓰인 데이터 및 메소드는 `data()` 와 `methods` 에 정의되어 있어야 함. 그후 `created()`, `methods()` 함수가 차례로 호출되고, data 가 변하는 걸 감지할 때 마다 데이터가 바뀌고 페이지가 re-render 된 후 `updated()` 함수가 호출. 페이지가 닫힐 때 `distroyed()` 함수 호출
 <br>
