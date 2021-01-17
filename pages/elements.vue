@@ -66,19 +66,19 @@ export default {
 };
 </script>
 <style>
-.fake-img {
-  display: flex;
-  width: 286px;
-  height: 180px;
-  justify-content: center;
-  align-items: center;
-  background-color: #333;
-  color: white;
-}
-.card {
-  width: 286px;
-}
-.wrapper {
-  color: white;
-}
+  .fake-img {
+    display: flex;
+    width: 286px;
+    height: 180px;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    color: white;
+  }
+  .card {
+    width: 286px;
+  }
+  .wrapper {
+    color: white;
+  }
 </style>

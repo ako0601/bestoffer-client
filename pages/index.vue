@@ -22,6 +22,7 @@
         >
           GitHub
         </a>
+        <a class="p-2 text-dark" href="/elements">Elements</a>
       </div>
     </div>
   </div>

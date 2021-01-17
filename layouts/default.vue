@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <Search />
     <Nuxt />
     <Footer />
   </div>

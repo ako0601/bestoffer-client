@@ -1,17 +1,55 @@
 <template>
-  <div
-    class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm"
-  >
-    <h5 class="my-0 mr-md-auto font-weight-normal">Header Component</h5>
-    <nav class="my-2 my-md-0 mr-md-3">
-      <a class="p-2 text-dark" href="/">Main</a>
-      <a class="p-2 text-dark" href="/elements">Elements</a>
-      <a class="p-2 text-dark" href="#">link #1</a>
-      <a class="p-2 text-dark" href="#">link #2</a>
-    </nav>
-    <a class="btn btn-outline-primary" href="#">Sign up</a>
+  <div class="size">
+    <div class="upper_authentication">
+      <nav class="my-2 my-md-0 mr-md-3">
+        <a href="#">로그인</a> ·
+        <a href="#">회원가입</a> ·
+        <a href="#">고객센터</a>
+      </nav>    
+    </div>
+    <div class="banner_title">
+      <p><a href="/">베스트오퍼</a></p>
+    </div>
   </div>
 </template>
+
 <script>
-export default {};
+  export default {};
 </script>
+
+<style>
+  .size {
+    margin-right: 10%;
+    margin-left: 10%;
+  }
+
+  .banner_title {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    color: black;
+    font-size:4em;
+    text-overflow: inherit;
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Nanum Myeongjo', serif;
+  }
+
+  .banner_title a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .banner_title a:hover {
+    text-decoration: none;
+    color: black;
+  }
+
+  .upper_authentication {
+    text-align: right;
+  }
+
+  .upper_authentication a {
+    text-decoration: none;
+    color: cornflowerblue;
+  }
+</style>
