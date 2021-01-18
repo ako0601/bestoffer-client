@@ -1,0 +1,7 @@
+version: "3"
+services:
+  server:
+    command: npm run prod
+    environment:
+      - NODE_ENV=production
+      - ENV_PATH=.prod.env
