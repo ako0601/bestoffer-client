@@ -16,7 +16,7 @@
 
 ```bash
 # 이 저장소 클론하기
-git clone ....
+git clone https://github.com/ako0601/bestoffer-client.git
 
 # 저장소가 클론된 디렉토리로 이동
 cd bestoffer-client
