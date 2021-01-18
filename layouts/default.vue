@@ -2,6 +2,8 @@
   <div>
     <Header />
     <Search />
+    <Adv />
+    <Category />
     <Nuxt />
     <Footer />
   </div>
