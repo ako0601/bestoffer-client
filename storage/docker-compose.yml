@@ -1,0 +1,7 @@
+version: "3"
+services:
+  client:
+    build: ../
+    container_name: bestoffer-client
+    ports:
+      - 80:3000
