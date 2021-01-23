@@ -1,66 +1,224 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">
-        bestoffer-client
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-        <a class="p-2 text-dark" href="/elements">Elements</a>
-      </div>
+    <div class="outer">
+        <div class="main_contents">
+            <div class="nav_list">
+                <ul id="category_list">
+                    <li v-for="item in categories" :key="item"><a href="#">{{item}}</a></li>
+                </ul>
+            </div>
+            <paginated-list :list-array="product" />
+            <div class="products">
+                <div class="contents" v-for="items in product" :key="items" onclick="location.href = '#'">
+                    <div class="product_image">
+                        <img :src="require(`@/assets/images/${items.image}.png`)">
+                    </div>
+                    <p style="font-size: 1.2rem; overflow: "><strong>{{items.product_name}}</strong></p>
+                    <div class="product_ex">
+                        <p>현재입찰가 <strong>{{items.current_bid_price}}원</strong></p>
+                        <p>입찰 {{items.bid}} </p>
+                        <p>남은시간 {{items.time_remain}}</p>
+                    </div>
+                    <div class="view_count">
+                        <img src="@/assets/images/view.png"><p>00000</p>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="btn-cover">
+            <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">이전</button>
+            <span class="page-count">{{pageNum + 1}} /{{pageCount}} 페이지</span>
+            <button :disabled="pageNum >= pageCount - 1" @click="nextPage" class="page-btn">다음</button>
+        </div>
     </div>
-  </div>
 </template>
 
 <script>
-export default {};
+    export default {
+        data() {
+            return {
+                pageNum: 0,
+                categories: ["예술품", "생물", "골동품", "옷"],
+                product: [
+                    { image: "default", product_name: "default 1", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0},
+                    { image: "default", product_name: "default 2", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                ]
+            };
+        },
+        props: {
+            pageSize: {
+                type: Number,
+                required: false,
+                default: 10
+            }
+        },
+        methods: {
+            nextPage () {
+                this.pageNum += 1;
+            },
+            prevPage () {
+                this.pageNum -= 1;
+            }
+        },
+        computed: {
+            pageCount () {
+                let listLeng = this.product.length,
+                    listSize = this.pageSize,
+                    page = Math.floor(listLeng / listSize);
+
+                if (listLeng % listSize > 0) page += 1;
+            
+                return page;
+            },
+            paginatedData () {
+                const start = this.pageNum * this.pageSize,
+                    end = start + this.pageSize;
+                return this.listArray.slice(start, end);
+            }
+        }
+    }
 </script>
 
+
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+    .outer {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
 
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
+    .main_contents {
+        display: flex;
+        justify-content: flex-start;
+        margin-top: 5px;
+    }
+    .nav_list {
+        display: flex;
+        flex-direction: column;
+        min-width: 150px;
+        margin: 5px;
+        border: 2px solid rgb(236, 236, 236);
+        border-radius: 5px;
+    }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
+    .nav_list ul{
+        list-style: none;
+        padding-left: 0;
+    }
 
-.links {
-  padding-top: 15px;
-}
+    .nav_list li {
+        padding: 5px;
+        padding-left: 15px;
+    }
+
+    .nav_list li:hover {
+        text-decoration: underline;
+        color: royalblue;
+        background-color: rgb(250, 250, 250);
+    }
+
+    .products {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .contents {
+        background-color: #f1f1f1;
+        position: relative;
+        width: 32%;
+        margin: 5px;
+        margin-bottom: 15px;
+        padding: 5px;
+    }
+
+    .product_image {
+        background-color: rgb(245, 245, 245);
+        overflow: hidden;
+    }
+
+    .product_image img {
+        object-fit: cover;
+        display: block; 
+        margin: 0px auto;
+        width: 100%;
+    }
+
+    .contens a:hover {
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .btn-cover {
+        margin-top: 1.5rem;
+        text-align: center;
+    }
+    .btn-cover .page-btn {
+        width: 5rem;
+        height: 2rem;
+        letter-spacing: 0.5px;
+    }
+    .btn-cover .page-count {
+        padding: 0 1rem;
+    }
+
+    .product_ex p {
+        margin: 0;
+    }
+    .view_count {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+        margin: 3px;
+
+    }
+    .view_count img{
+        margin-top: 8px;
+        margin-right: 5px;
+        width: 16px;
+        height: 100%;
+    }
 </style>
