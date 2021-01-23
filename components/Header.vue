@@ -1,14 +1,22 @@
 <template>
   <div class="size">
-    <div class="upper_authentication">
-      <nav class="my-2 my-md-0 mr-md-3">
-        <a href="#">로그인</a> ·
-        <a href="#">회원가입</a> ·
-        <a href="#">고객센터</a>
-      </nav>    
-    </div>
-    <div class="banner_title">
-      <p><a href="/">베스트오퍼</a></p>
+    <div class="topbar">
+      <div class="logo">
+        <img onclick="location.href = 'products'" src="../assets/images/Logo.png"/>
+      </div>
+      <div class="search_container">
+        <input class="search" type="text" placeholder="검색어 입력">
+        <button>검색</button>
+      </div>
+      <div class="infocart_contents">
+        <a href="#"><img src="../assets/images/round-add-button.png"></a>
+      </div>
+      <div class="infocart_contents">
+        <a href="#"><img src="../assets/images/shopping-cart.png"></a>
+      </div>
+      <div class="infocart_contents">
+        <a href="#"><img src="../assets/images/user.png"></a>
+      </div>
     </div>
   </div>
 </template>
@@ -19,37 +27,59 @@
 
 <style>
   .size {
-    margin-right: 10%;
+    margin: 10px;
+  }
+  .topbar {
     margin-left: 10%;
+    margin-right: 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  .banner_title {
-    padding-top: 50px;
-    padding-bottom: 50px;
-    color: black;
-    font-size:4em;
-    text-overflow: inherit;
+  .logo img {
+    width: 200px;
+    cursor: pointer;
+  }
+
+  .infocart_contents img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 2px;
+  }
+
+  .infocart_contents {
     text-align: center;
-    font-weight: bold;
-    font-family: 'Nanum Myeongjo', serif;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    flex-grow: 0;
   }
 
-  .banner_title a {
-    text-decoration: none;
-    color: black;
+  .search_container {
+    height: 50px;
+    width: 500px;
+    border: 1px solid black;
+    background: #ffffff;
   }
 
-  .banner_title a:hover {
-    text-decoration: none;
-    color: black;
+  .search_container input {
+    font-size: 16px;
+    width: 425px;
+    padding: 10px;
+    border: 0px;
+    outline: none;
+    float: left;
   }
 
-  .upper_authentication {
-    text-align: right;
+  .search_container button {
+    width: 70px;
+    height: 100%;
+    border: 0px;
+    background: black;
+    outline: none;
+    float: right;
+    color: white;
   }
 
-  .upper_authentication a {
-    text-decoration: none;
-    color: cornflowerblue;
-  }
 </style>
