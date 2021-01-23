@@ -3,7 +3,7 @@
     <div>
       <Logo />
       <h1 class="title">
-        bestoffer-client
+        bestoffer-client ::: {{ env_test }}
       </h1>
       <div class="links">
         <a
@@ -29,7 +29,13 @@
 </template>
 
 <script>
-export default {};
+export default {
+  data() {
+    return {
+      env_test: process.env.TEST_ENV
+    }
+  }
+};
 </script>
 
 <style>
