@@ -1,7 +1,8 @@
 <template>
   <div>
     <Header />
-    <!-- <Adv /> -->
+    <Navigation />
+    <Banner />
     <Category />
     <Nuxt />
     <Footer />
