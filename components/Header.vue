@@ -2,7 +2,7 @@
   <div class="size">
     <div class="topbar">
       <div class="logo">
-        <img onclick="location.href = 'products'" src="../assets/images/Logo.png"/>
+        <img onclick="location.href = '/'" src="../assets/images/Logo.png"/>
       </div>
       <div class="search_container">
         <input class="search" type="text" placeholder="검색어 입력">

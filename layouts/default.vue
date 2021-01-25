@@ -2,7 +2,6 @@
   <div>
     <Header />
     <Navigation />
-    <Banner />
     <Category />
     <Nuxt />
     <Footer />

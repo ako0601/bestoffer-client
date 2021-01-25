@@ -1,39 +1,45 @@
 <template>
     <div class="navigation">
-        <nav>
-            <ul>
-                <li>임시</li>
-                <li>임시</li>
-                <li>임시</li>
-                <li>임시</li>
-                <li>임시</li>
-                <li>임시</li>
-            </ul>
-        </nav>
+        <a href="/" id="navlink">Home</a>
+        <a href="products" id="navlink">Products</a>
+        <a href="elements" id="navlink">Elements</a>
+        <a href="Private" id="navlink">Private</a>
+        <a href="#" id="navlink">임시</a>
     </div>
 </template>
 
 
 <style>
     .navigation {
+        padding-left: 20%;
+        padding-right: 20%;
         width: 100%;
-        height: 40px;
+        height: 60px;
         background-color: black;
         color: white;
-    }
-
-    .navigation nav {
-        margin-left: 10%;
-        margin-right: 10%;
-        padding-top: 7px;
-    }
-
-    .navigation ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
+        align-items: center;
     }
 
-    .navigation li {
-        list-style: none;
+    .navigation a {
+        color: white;
+        text-decoration: none;
     }
+
+    #navlink {
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        transition: background .5s, box-shadow .15s;
+    }
+
+    #navlink:hover {
+        background-color: rgb(70, 70, 70);
+    }
+
+
 </style>
