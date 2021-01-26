@@ -42,19 +42,7 @@
                 product: [
                     { image: "default", product_name: "default 1", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0},
                     { image: "default", product_name: "default 2", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "default 3", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
                     { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
                     { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
                     { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
@@ -125,12 +113,8 @@
 
 <style>
     @media (min-width: 1600px) {
-        * {
-            background-color: red;
-        }
         .contents {
             width: 33%;
-            background-color: red;
         }
         
     }
