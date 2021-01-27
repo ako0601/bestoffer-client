@@ -108,6 +108,7 @@ export default {
       this.$appApi.createTest(formData).then(res => {
         console.log(`response :::: ${res.data}`);
       });
+      location.reload();
     }
   }
 };
