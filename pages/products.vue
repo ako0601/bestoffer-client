@@ -8,7 +8,7 @@
             </div>
             <paginated-list :list-array="product" />
             <div class="products">
-                <div class="contents" v-for="items in product" :key="items" onclick="location.href = '#'">
+                <div class="contents" v-for="items in product" :key="items" onclick="location.href = 'productDetail'">
                     <div class="product_image">
                         <img :src="require(`@/assets/images/${items.image}.png`)">
                     </div>
@@ -40,39 +40,21 @@
                 pageNum: 0,
                 categories: ["예술품", "생물", "골동품", "옷"],
                 product: [
-                    { image: "default", product_name: "default 1", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0},
-                    { image: "default", product_name: "default 2", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "default 3", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
-                    { image: "default", product_name: "이름이름 default", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0 },
+                    { image: "default", product_name: "default 1", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100001},
+                    { image: "default", product_name: "default 2", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100002},
+                    { image: "default", product_name: "default 3", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100003},
+                    { image: "default", product_name: "default 4", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100004},
+                    { image: "default", product_name: "default 5", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100005},
+                    { image: "default", product_name: "default 6", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100006},
+                    { image: "default", product_name: "default 7", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100007},
+                    { image: "default", product_name: "default 8", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100008},
+                    { image: "default", product_name: "default 9", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100009},
+                    { image: "default", product_name: "default 10", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100010},
+                    { image: "default", product_name: "default 11", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100011},
+                    { image: "default", product_name: "default 12", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100012},
+                    { image: "default", product_name: "default 13", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100013},
+                    { image: "default", product_name: "default 14", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100014},
+                    { image: "default", product_name: "default 15", instant_pay: 0, current_bid_price: 0, bid: 0, time_remain: '00:00:00', see: 0, item_number: 100015},
                 ]
             };
         },

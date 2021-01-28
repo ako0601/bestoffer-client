@@ -15,7 +15,7 @@
         padding-right: 20%;
         width: 100%;
         height: 60px;
-        background-color: black;
+        background-color: #013A40;
         color: white;
         display: flex;
         justify-content: space-around;
@@ -38,8 +38,6 @@
     }
 
     #navlink:hover {
-        background-color: rgb(70, 70, 70);
+        background-color: rgb(92, 108, 116);
     }
-
-
 </style>

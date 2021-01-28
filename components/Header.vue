@@ -59,7 +59,7 @@
   .search_container {
     height: 50px;
     width: 500px;
-    border: 1px solid black;
+    border: 1px solid #013A40;
     background: #ffffff;
   }
 
@@ -76,7 +76,7 @@
     width: 70px;
     height: 100%;
     border: 0px;
-    background: black;
+    background: #013A40;
     outline: none;
     float: right;
     color: white;

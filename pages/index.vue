@@ -157,7 +157,7 @@
     .hot-items {
         margin-top: 120px;
         padding: 50px;
-        background-color: black;
+        background-color: rgb(46, 54, 58);
     }
 
     .hot-items h1 {
@@ -169,6 +169,7 @@
         background-color: white;
         border-radius: 10px;
         margin-bottom: 30px;
+        color: rgb(46, 54, 58);
     }
 
     .hot-items .swiper {
