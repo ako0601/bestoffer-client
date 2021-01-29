@@ -78,7 +78,9 @@
                 <h1>나이키 신발인데 뭔지 모름</h1>
                 <h3>현재 가격: 00000원</h3>
                 <h4>즉시 결제가: 128,000원</h4>
-                <button id="btn_bid">입찰하기</button>
+                <div class="button_div">
+                    <button id="btn_bid">입찰하기</button>
+                </div>
             </div> 
         </div>
         <div class="product_detail">
@@ -201,10 +203,10 @@
     }
 
     .bid_info{
-        color: rgb(46, 54, 58);
+        color: #013A40;
         display: flex;
         justify-content: flex-start;
-        border: 1px solid rgb(46, 54, 58);
+        border: 1px solid #013A40;
     }
 
     .bid_count {
@@ -217,17 +219,47 @@
         padding: 10px;
     }
 
-    #btn_bid {
+    .product_informations button {
+        background:rgb(166, 112, 65);
+        color:#fff;
+        border:none;
+        position:relative;
+        height:80px;
+        font-size:1.6em;
+        padding:0 2em;
+        cursor:pointer;
+        transition:800ms ease all;
+        outline:none;
         width: 300px;
-        height: 80px;
-        border: 3px solid rgb(166,112,65);
-        border-radius: 10px;
-        background-color: white;
-        font-size: 1.4rem;
     }
 
-    #btn_bid:hover {
-        background-color: rgb(166,112,65);
-        color: white;
+    .button_div {
+        text-align: center;
+    }
+
+    .product_informations button:hover{
+        background:#fff;
+        color:rgb(166, 112, 65);
+    }
+
+    .product_informations button:before, .product_informations button:after{
+        content:'';
+        position:absolute;
+        top:0;
+        right:0;
+        height:2px;
+        width:0;
+        background: rgb(166, 112, 65);
+        transition:400ms ease all;
+    }
+    .product_informations button:after{
+        right:inherit;
+        top:inherit;
+        left:0;
+        bottom:0;
+    }
+    .product_informations button:hover:before, .product_informations button:hover:after{
+        width:100%;
+        transition:800ms ease all;
     }
 </style>
