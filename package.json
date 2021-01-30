@@ -16,7 +16,9 @@
     "bootstrap-vue": "^2.17.3",
     "core-js": "^3.6.5",
     "cross-env": "^7.0.3",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "swiper": "^6.4.8",
+    "vue-awesome-swiper": "^4.1.1"
   },
   "devDependencies": {}
 }
