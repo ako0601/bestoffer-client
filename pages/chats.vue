@@ -34,8 +34,8 @@ export default {
         })
       );
     };
-    this.socket.onmessage = data => {
-      console.log("received", data);
+    this.socket.onmessage = event => {
+      console.log("received", event.data);
     };
   }
 };
