@@ -1,7 +1,7 @@
 <template>
   <div class="context">
     <div v-if="Object.keys(notice).length">
-      <h3>해당 오브젝트는 다음과 같습니다.</h3>
+      <h3>해당 오브젝트는 다음과 같습니다 ::: {{ foo }}</h3>
       <p>
         title: {{ notice.title }}
         <br />
@@ -21,6 +21,11 @@
 </template>
 <script>
 export default {
+  data() {
+    return {
+      foo: "abc"
+    };
+  },
   async asyncData({ app, params }) {
     let data;
     await app.$appApi.testDetail(params.id).then(res => {

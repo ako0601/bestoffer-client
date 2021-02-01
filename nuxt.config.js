@@ -16,6 +16,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     "~/plugins/axios.js",
+    "~/plugins/socket.js",
     { src: "@/plugins/vue-awesome-swiper", mode: "client" }
   ],
 
@@ -37,12 +38,24 @@ export default {
     filename: process.env.NODE_ENV === "dev" ? ".dev.env" : ".local.env"
   },
 
+  io: {
+    sockets: [
+      {
+        name: "main",
+        url: `${process.env.SERVICE_API_URL}`,
+        default: true
+      }
+    ]
+  },
+
   axios: {
     debug: true
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {},
+  build: {
+    transpile: ["@adonisjs/websocket-client", "regenerator-runtime"]
+  },
   server: {
     host: process.env.NODE_ENV === "local" ? "127.0.0.1" : "0.0.0.0",
     port: 3000
