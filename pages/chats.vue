@@ -6,37 +6,35 @@
 
 <script>
 export default {
+  data() {
+    return {
+      messages: []
+    };
+  },
   methods: {
     test() {
-      return new Promise(resolve => {
-        this.socket.send(
-          JSON.stringify({
-            t: 7,
-            d: {
-              topic: "news",
-              event: "message",
-              data: "this is message event from client"
-            }
-          })
-        );
-        resolve();
+      this.socket.emit("message", {
+        content: "hello world!",
+        sender: this.clientId
       });
     }
   },
   mounted() {
-    this.socket = new WebSocket(`${process.env.SERVICE_SOCKET_URL}/adonis-ws`);
-    this.socket.onopen = event => {
-      console.log("connection status: ", this.socket.readyState);
-      this.socket.send(
-        JSON.stringify({
-          t: 1,
-          d: { topic: "news" }
-        })
-      );
-    };
-    this.socket.onmessage = event => {
-      console.log("received", event.data);
-    };
+    this.socket = this.$nuxtSocket(
+      new WebSocket(`${process.env.SERVICE_SOCKET_URL}/adonis-ws`),
+      "chats",
+      data => {
+        if (data.status == 0) {
+          this.clientId = data.connId;
+          console.log("CLIENT ID ::::", this.clientId);
+        } else if (data.status == 7) {
+          this.messages.push({
+            contents: data.content,
+            sender: data.sender
+          });
+        }
+      }
+    );
   }
 };
 </script>

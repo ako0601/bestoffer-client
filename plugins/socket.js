@@ -1,7 +1,11 @@
 import SocketService from "../services/SocketService";
 
 export default ({ app }, inject) => {
-  inject("nuxtSocket", socket => {
-    return new SocketService(socket);
+  inject("nuxtSocket", (socket, topic, callback) => {
+    return new SocketService(socket, topic, callback);
+  });
+  inject("pluginTest", message => {
+    console.log("pluginTest");
+    return "hello plugin!";
   });
 };
