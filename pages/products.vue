@@ -35,27 +35,11 @@
           </div>
         </div>
       </div>
-      <div class="btn-cover">
-        <button :disabled="pageNum === 0" @click="prevPage" class="page-btn">
-          이전
-        </button>
-        <span class="page-count"
-          >{{ pageNum + 1 }} /{{ pageCount }} 페이지</span
-        >
-        <button
-          :disabled="pageNum >= pageCount - 1"
-          @click="nextPage"
-          class="page-btn"
-        >
-          다음
-        </button>
-      </div>
     </div>
-    <div class="btn-cover">
-      <b-pagination-nav
-        :link-gen="linkGen"
-        :number-of-pages="totalPage"
-      ></b-pagination-nav>
+    <div class="button_cover">
+      <div class="btn-cover">
+        <b-pagination v-model="currentPage" :total-rows="rows"></b-pagination>
+      </div>
     </div>
   </div>
 </template>
@@ -64,6 +48,8 @@
 export default {
   data() {
     return {
+      rows: 100,
+      currentPage: 1,
       pageNum: 0,
       categories: ["예술품", "생물", "골동품", "옷"],
       product: [
@@ -255,101 +241,107 @@ export default {
 </script>
 
 <style>
-@media (min-width: 1600px) {
-  .contents {
-    width: 33%;
+  @media (min-width: 1600px) {
+    .contents {
+      width: 33%;
+    }
   }
-}
-.main_contents {
-  display: flex;
-  justify-content: flex-start;
-  margin-top: 5px;
-}
-.nav_list {
-  display: flex;
-  flex-direction: column;
-  min-width: 200px;
-  margin: 5px;
-  border: 2px solid rgb(236, 236, 236);
-  border-radius: 5px;
-}
 
-.nav_list ul {
-  list-style: none;
-  padding-left: 0;
-}
+  .main_contents {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 5px;
+  }
 
-.nav_list li {
-  padding: 5px;
-  padding-left: 15px;
-}
+  .nav_list {
+    display: flex;
+    flex-direction: column;
+    min-width: 200px;
+    margin: 5px;
+    border: 2px solid rgb(236, 236, 236);
+    border-radius: 5px;
+  }
 
-.nav_list li:hover {
-  text-decoration: underline;
-  color: royalblue;
-  background-color: rgb(250, 250, 250);
-}
+  .nav_list ul {
+    list-style: none;
+    padding-left: 0;
+  }
 
-.products {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
+  .nav_list li {
+    padding: 5px;
+    padding-left: 15px;
+  }
 
-.contents {
-  background-color: #f1f1f1;
-  position: relative;
-  width: 19%;
-  margin: 5px;
-  margin-bottom: 15px;
-  padding: 5px;
-}
+  .nav_list li:hover {
+    text-decoration: underline;
+    color: royalblue;
+    background-color: rgb(250, 250, 250);
+  }
 
-.product_image {
-  background-color: rgb(245, 245, 245);
-  overflow: hidden;
-}
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
 
-.product_image img {
-  object-fit: cover;
-  display: block;
-  margin: 0px auto;
-  width: 100%;
-}
+  .contents {
+    background-color: #f1f1f1;
+    position: relative;
+    width: 19%;
+    margin: 5px;
+    margin-bottom: 15px;
+    padding: 5px;
+  }
 
-.contents a:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
+  .product_image {
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+  }
 
-.btn-cover {
-  margin-top: 1.5rem;
-  text-align: center;
-}
-.btn-cover .page-btn {
-  width: 5rem;
-  height: 2rem;
-  letter-spacing: 0.5px;
-}
-.btn-cover .page-count {
-  padding: 0 1rem;
-}
+  .product_image img {
+    object-fit: cover;
+    display: block;
+    margin: 0px auto;
+    width: 100%;
+  }
 
-.product_ex p {
-  margin: 0;
-}
-.view_count {
-  position: absolute;
-  right: 0;
-  top: 0;
-  display: flex;
-  justify-content: flex-end;
-  margin: 3px;
-}
-.view_count img {
-  margin-top: 8px;
-  margin-right: 5px;
-  width: 16px;
-  height: 100%;
-}
+  .contents a:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+      0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  .btn-cover {
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: 0 auto;
+    margin: 0 auto;
+    width: fit-content;
+  }
+
+  .btn-cover .page-btn {
+    width: 5rem;
+    height: 2rem;
+    letter-spacing: 0.5px;
+  }
+  .btn-cover .page-count {
+    padding: 0 1rem;
+  }
+
+  .product_ex p {
+    margin: 0;
+  }
+  .view_count {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: 3px;
+  }
+  .view_count img {
+    margin-top: 8px;
+    margin-right: 5px;
+    width: 16px;
+    height: 100%;
+  }
 </style>
