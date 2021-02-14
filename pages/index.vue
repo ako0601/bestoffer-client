@@ -4,41 +4,14 @@
         <div class="Main_banner">
             <h2>오늘의 베스트 오퍼</h2>
             <h1>{{TodaysDeal}}</h1>
-            <div id="app">
-                <swiper class="swiper" :options="swiperOption1">
-                    <swiper-slide>
-                        <div class="swiper-zoom-container">
-                            <img src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="swiper-zoom-container">
-                            <img src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="swiper-zoom-container">
-                            <img src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="swiper-zoom-container">
-                            <img src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="swiper-zoom-container">
-                            <img src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery">
-                        </div>
-                    </swiper-slide>
-                    <swiper-slide>
-                        <div class="swiper-zoom-container">
-                            <img src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery">
-                        </div>
-                    </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
-                </swiper>
+            <div class="TDList">
+                <div v-for="i in TD_data" :key="i">
+                    <div class="TD">
+                        <img :src="i.TDimage">
+                    </div>
+                </div>
             </div>
+            <a href="#">더보기</a>
         </div>
         <div class="hot-items">
             <h1>Hot Now</h1>
@@ -74,32 +47,19 @@
         data() {
             return {
                 TodaysDeal: "한정판 에어조던",
-                swiperOption1: {
-                    slidesPerView: 5,
-                    spaceBetween: 50,
-                    pagination: {
-                        el: '.swiper-pagination',
-                        clickable: true
-                    },
-                    breakpoints: {
-                        1024: {
-                            slidesPerView: 4,
-                            spaceBetween: 40
-                        },
-                        768: {
-                            slidesPerView: 3,
-                            spaceBetween: 30
-                        },
-                        640: {
-                            slidesPerView: 2,
-                            spaceBetween: 20
-                        },
-                        320: {
-                            slidesPerView: 1,
-                            spaceBetween: 10
-                        }
-                    }
-                },
+                TD_data: [
+                    {index:1, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:2, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:3, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:4, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:5, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:6, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:7, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:8, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:9, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+                    {index:10, TDimage:"https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/AR6351-075/3b7e1149-d435-4597-86e1-bdac07e6c731_primary.jpg?gallery"},
+    
+                ],
                 swiperOption2: {
                     slidesPerView: 3,
                     spaceBetween: 30,
@@ -124,33 +84,46 @@
 <style>
     .Main_banner h1 {
         text-align: center;
-        font-weight: 900;
+        font-weight: 500;
     }
     .Main_banner h2 {
-        margin-top: 50px;
+        margin-top: 120px;
         text-align: center;
         font-weight: 600;
-        
     }
 
-    .Main_banner .swiper {
-        width: 100%;
-        height: 300px;
-        padding-left: 10%;
-    }
-
-    .Main_banner .swiper-slide {
-        max-width: 240px;
+    .Main_banner {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        text-align: center;
+    }
+
+    .Main_banner .TDList{
+        margin-top: 70px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 1400px;
+        justify-content: center;
+    }
+
+    .Main_banner .TD {
         font-weight: bold;
         font-size: 3rem;
         transition: transform .3s;
+        margin: 10px;
     }
 
-    .Main_banner .swiper-slide:hover {
+    .Main_banner a {
+        float: right;
+    }
+
+    .Main_banner .TD img {
+        max-width: 220px;
+        cursor: pointer;
+    }
+
+    .Main_banner .TD:hover {
         transform: scale(1.1);
     }
 
@@ -185,4 +158,6 @@
         font-size: 3rem;
         background-color: white;
     }
+
+
 </style>

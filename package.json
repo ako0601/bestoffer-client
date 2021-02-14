@@ -18,7 +18,8 @@
     "cross-env": "^7.0.3",
     "nuxt": "^2.14.6",
     "swiper": "^6.4.8",
-    "vue-awesome-swiper": "^4.1.1"
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-burger-menu": "^2.0.5"
   },
   "devDependencies": {}
 }
