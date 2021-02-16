@@ -31,14 +31,14 @@
           </div>
         </div>
         <input class="search" type="text" placeholder="검색어 입력">
-        <button class="searchbtn">검색</button>
+        <button class="searchbtn"></button>
       </div>
       <div class="user_contents">
         <div class="infocart_contents">
           <a href="#"><img src="../assets/images/round-add-button.png"></a>
         </div>
         <div class="infocart_contents">
-          <a href="#"><img src="../assets/images/shopping-cart.png"></a>
+          <a href="cart"><img src="../assets/images/shopping-cart.png"></a>
         </div>
         <div class="infocart_contents">
           <a href="#"><img src="../assets/images/user.png"></a>
@@ -56,7 +56,7 @@
 
 <style>
   .size {
-    height: 120px;
+    height: 100px;
     margin: auto 0;
     display: flex;
     align-items: center;
@@ -73,7 +73,7 @@
   }
 
   .logo img {
-    width: 200px;
+    width: 130px;
     cursor: pointer;
   }
 
@@ -92,32 +92,32 @@
   }
 
   .search_container {
-    height: 50px;
-    width: 500px;
+    height: 40px;
+    width: 35%;
     background: #ffffff;
-    border-radius: 30px;
+    border-radius: 25px;
     display: flex;
+    align-items: center;
   }
 
   .search_container input {
-    padding-left: 18px;
+    padding-left: 15px;
     font-size: 16px;
-    width: 425px;
+    width: 80%;
     border: 0px;
     outline: none;
     float: left;
-    border-radius: 30px;
+    border-radius: 25px;
   }
 
-  .search_container .searchbtn button {
-    width: 70px;
-    height: 100%;
+  .search_container .searchbtn {
+    width: 30px;
+    height: 30px;
     border: 0px;
-    background: white;
+    background-image: url("../assets/images/search.png");
+    background-size: cover;
     outline: none;
     float: right;
-    color: black;
-    border-radius: 30px;
   }
 
   .user_contents {
@@ -138,8 +138,8 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    height: 150px;
-    width: 150px;
+    height: 100px;
+    width: 100px;
     background-color: #394759;
     transition: 0.9s;
   }
