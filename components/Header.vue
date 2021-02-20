@@ -8,9 +8,9 @@
             <div class="hamburger_menu"></div>
             <div class="hamburger_menu"></div>
           </template>
-          <b-dropdown-item href="#">Action</b-dropdown-item>
-          <b-dropdown-item href="#">Another action</b-dropdown-item>
-          <b-dropdown-item href="#">Something else here...</b-dropdown-item>
+          <b-dropdown-item href="/">Home</b-dropdown-item>
+          <b-dropdown-item href="products">오픈경매</b-dropdown-item>
+          <b-dropdown-item href="private">비공개경매</b-dropdown-item>
         </b-dropdown>
       </div>
       
